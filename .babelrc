@@ -1,0 +1,64 @@
+{
+  presets: [
+    [
+      "@babel/preset-env",
+      {
+        forceAllTransforms: true,
+        useBuiltIns: "entry",
+        corejs: 3,
+        modules: false,
+        exclude: ["transform-typeof-symbol"]
+      }
+    ],
+    [
+      "@babel/preset-react",
+      {
+        development: false,
+        useBuiltIns: true
+      }
+    ]
+  ],
+  plugins: [
+    "babel-plugin-macros",
+    "@babel/plugin-syntax-dynamic-import",
+    "@babel/plugin-transform-destructuring",
+    [
+      "@babel/plugin-proposal-class-properties",
+      {
+        loose: true
+      }
+    ],
+    [
+      "@babel/plugin-proposal-object-rest-spread",
+      {
+        useBuiltIns: true
+      }
+    ],
+    [
+      "@babel/plugin-transform-runtime",
+      {
+        helpers: false,
+        regenerator: true,
+        corejs: false
+      }
+    ],
+    [
+      "@babel/plugin-transform-regenerator",
+      {
+        async: false
+      }
+    ],
+    ["module-resolver", {
+      "alias": {
+        "root": "./frontend",
+        "app": "./frontend/app",
+      }
+    }],
+    [
+      "babel-plugin-transform-react-remove-prop-types",
+      {
+        removeImport: true
+      }
+    ]
+  ]
+}

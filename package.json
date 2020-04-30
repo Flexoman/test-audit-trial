@@ -1,13 +1,15 @@
 {
   "name": "tap-audit-trail-module",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "main": "./index.js",
   "repository": {
     "type": "git",
     "url": "git://github.com/Flexoman/test-audit-trial.git"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.9.6",
+    "@babel/preset-react": "7.9.4",
     "@types/react-router-dom": "5.1.3",
     "eslint": "^6.6.0",
     "eslint-plugin-cypress": "2.7.0",
@@ -16,11 +18,10 @@
     "tslint": "5.20.1",
     "typed-scss-modules": "1.0.1",
     "typescript": "3.7.3",
-    "wait-on": "3.0.1"
+    "webpack": "^4.43.0"
   },
   "dependencies": {
     "@amcharts/amcharts4": "4.7.19",
-    "@babel/preset-react": "7.7.4",
     "@date-io/moment": "1.3.13",
     "@material-ui/core": "^4.9.12",
     "@material-ui/icons": "4.5.1",
@@ -28,6 +29,7 @@
     "@material-ui/pickers": "3.2.10",
     "@types/classnames": "2.2.9",
     "axios": "0.18.1",
+    "@babel/cli": "7.8.4",
     "babel-plugin-module-resolver": "4.0.0",
     "babel-plugin-transform-react-remove-prop-types": "0.4.24",
     "classnames": "2.2.6",
@@ -45,14 +47,14 @@
     "react-router-dom": "5.1.2",
     "react-scripts": "3.4.1",
     "react-select": "^3.1.0",
-    "ts-loader": "6.2.1",
-    "yup": "0.28.0"
+    "ts-loader": "6.2.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "build:index": "./node_modules/@babel/cli/bin/babel.js src/App.js --out-file ./index.js",
     "publish:npm": "rm -rf dist && mkdir dist && babel src/components -d dist --copy-files"
   },
   "eslintConfig": {
