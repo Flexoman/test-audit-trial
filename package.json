@@ -34,7 +34,7 @@
     "babel-plugin-transform-react-remove-prop-types": "0.4.24",
     "classnames": "2.2.6",
     "dotenv": "8.2.0",
-    "lodash": "4.17.15",
+    "lodash": "4.17.21",
     "mobx": "5.15.0",
     "mobx-react-lite": "1.5.1",
     "mobx-utils": "5.5.3",
